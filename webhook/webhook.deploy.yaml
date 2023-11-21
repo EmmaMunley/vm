@@ -20,7 +20,7 @@ spec:
           operator: Exists
           effect: NoSchedule
       containers:
-        - image: us-central1-docker.pkg.dev/emma-sandbox-395918/tekton-webhook/tekton-vaw:tag1
+        - image: us-central1-docker.pkg.dev/emma-sandbox-395918/tekton-webhook/tekton-vaw:latest
           imagePullPolicy: Always
           name: tekton-webhook
           env:
