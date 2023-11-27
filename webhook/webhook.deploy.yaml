@@ -23,6 +23,7 @@ spec:
         - image: us-central1-docker.pkg.dev/emma-sandbox-395918/tekton-webhook/tekton-vaw:latest
           imagePullPolicy: Always
           name: tekton-webhook
+          args: ["--envelope_enabled=false"]
           env:
             - name: TLS
               value: "true"
