@@ -1,0 +1,31 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: invalid-gcb-pipeline
+spec:
+  params:
+    - name: username
+      type: string
+  tasks:
+    - name: hello
+      matrix:
+        params:
+          - name: platform
+            value:
+              - linux
+              - mac
+              - windows
+          - name: browser
+            value:
+              - chrome
+              - safari
+              - firefox
+      taskSpec:
+        params:
+          - name: platform
+          - name: browser
+        steps:
+          - name: echo
+            image: alpine
+            script: |
+              echo "$(params.platform) and $(params.browser)"

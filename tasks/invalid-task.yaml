@@ -1,11 +1,11 @@
 apiVersion: tekton.dev/v1
 kind: Task
 metadata:
-  name: offensive-task
+  name: invalid-tekton-task
 spec:
   steps:
     - name: echo
       image: alpine
       script: |
         #!/bin/sh
-        echo "Hello World"
+        echo "Hello $(params.IDONOTEXIST)"

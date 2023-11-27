@@ -1,0 +1,9 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/yamllint.json": [
+      "file:///Users/emmamunley/go/src/test/vm/tasks/invalid-task.yaml",
+      "file:///Users/emmamunley/go/src/test/vm/tasks/valid-task.yaml",
+      "file:///Users/emmamunley/go/src/test/vm/tasks/invalid-task-gcb.yaml"
+    ]
+  }
+}

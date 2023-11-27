@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  name: offensive-pipeline
+  name: invalid-tekton-pipeline
 spec:
   params:
     - name: username
@@ -11,4 +11,4 @@ spec:
       taskSpec:
         steps:
           - image: ubuntu
-            script: echo 'hello'
+            script: echo "Hello $(params.IDONOTEXIST)"
