@@ -1,25 +1,14 @@
 apiVersion: tekton.dev/v1
 kind: Task
 metadata:
-  name: invalid-gcb-task
+  name: invalid-tekton-task-gcb
 spec:
-  params:
-    - name: platform
-    - name: browser
-  matrix:
-    params:
-      - name: platform
-        value:
-          - linux
-          - mac
-          - windows
-      - name: browser
-        value:
-          - chrome
-          - safari
-          - firefox
   steps:
     - name: echo
       image: alpine
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
       script: |
-        echo "$(params.platform) and $(params.browser)"
+        #!/bin/sh
+        echo "Hello world"
